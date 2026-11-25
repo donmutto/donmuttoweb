@@ -262,8 +262,6 @@
     transform: scale(1.1);
 }
 
-        .whatsapp-float:hover { transform: scale(1.1); }
-
         /* FOOTER */
         footer {
             border-top: 1px solid var(--border-color);
@@ -281,12 +279,51 @@
 
         /* MOBİL */
         @media (max-width: 640px) {
-            .logo-text { font-size: 16px; letter-spacing: 1px; }
-            nav { gap: 14px; }
-            nav a { font-size: 12px; }
+            /* iOS'ta "fixed" arka plan bozuk çalışır, mobilde normal akışa al */
+            body { background-attachment: scroll; }
+
+            /* Header: iki satır (üstte logo+marka, altta menü) */
+            header {
+                flex-direction: column;
+                gap: 8px;
+                padding: 10px 4% 8px;
+            }
+            .logo-area { gap: 10px; justify-content: center; }
+            .logo-img { height: 38px; }
+            .logo-text { font-size: 18px; letter-spacing: 2px; }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                gap: 0;
+                border-top: 1px solid var(--border-color);
+                padding-top: 6px;
+            }
+            nav a {
+                flex: 1;
+                text-align: center;
+                font-size: 12px;
+                letter-spacing: 1px;
+                padding: 6px 4px;
+            }
+
+            /* Header iki satır olduğu için hero'yu aşağı it */
+            .hero { padding: 130px 20px 40px; min-height: 70vh; }
+            .hero-logo { width: 190px; }
             .hero h1 { font-size: 28px; }
             .hero p { font-size: 15px; }
+            .container { scroll-margin-top: 110px; margin: 40px auto; }
             .section-title { font-size: 24px; }
+
+            /* WhatsApp butonu küçülsün, footer ikonlarını kapatmasın */
+            .whatsapp-float {
+                width: 72px;
+                height: 72px;
+                bottom: 16px;
+                right: 16px;
+            }
+            footer { padding-bottom: 110px; }
+            .social-links { gap: 28px; }
         }
     </style>
 </head>
@@ -378,7 +415,7 @@
                     <p class="product-desc">Hafif ve terletmeyen özel pamuklu yapısı sayesinde günün her saatinde yokmuş gibi hissettiren doğal rahatlık.</p>
                 </div>
                 <div class="product-actions">
-                    <a class="btn btn-whatsapp wa-link" data-msg="Merhaba, Don Mutto Özel Hediyelik Kutu hakkında bilgi almak istiyorum." href="#" target="_blank" rel="noopener">WhatsApp Sipariş</a>
+                    <a class="btn btn-whatsapp wa-link" data-msg="Merhaba, Don Mutto Gri Renk Boxer hakkında bilgi almak istiyorum." href="#" target="_blank" rel="noopener">WhatsApp Sipariş</a>
                     <a class="btn btn-trendyol ty-link" href="#" target="_blank" rel="noopener">Trendyol'dan Al</a>
                 </div>
             </div>
@@ -394,7 +431,7 @@
                     <p class="product-desc">Şık ejderha detaylı özel kutusunda premium sunum.</p>
                 </div>
                 <div class="product-actions">
-                    <a class="btn btn-whatsapp wa-link" data-msg="Gün boyu maksimum konfor sunan esnek kumaşı ve iz yapmayan ergonomik kesimiyle gardırobun vazgeçilmez klasiği." href="#" target="_blank" rel="noopener">WhatsApp Sipariş</a>
+                    <a class="btn btn-whatsapp wa-link" data-msg="Merhaba, Don Mutto Siyah Renk Boxer hakkında bilgi almak istiyorum." href="#" target="_blank" rel="noopener">WhatsApp Sipariş</a>
                     <a class="btn btn-trendyol ty-link" href="#" target="_blank" rel="noopener">Trendyol'dan Al</a>
                 </div>
             </div>
@@ -410,7 +447,7 @@
                     <p class="product-desc">Şık ejderha detaylı özel kutusunda premium sunum.</p>
                 </div>
                 <div class="product-actions">
-                    <a class="btn btn-whatsapp wa-link" data-msg="Nefes alan yumuşak dokusu ve vücudu sıkmadan saran kalıbıyla her an ferah ve şık bir kullanım sağlar." href="#" target="_blank" rel="noopener">WhatsApp Sipariş</a>
+                    <a class="btn btn-whatsapp wa-link" data-msg="Merhaba, Don Mutto Lacivert Renk Boxer hakkında bilgi almak istiyorum." href="#" target="_blank" rel="noopener">WhatsApp Sipariş</a>
                     <a class="btn btn-trendyol ty-link" href="#" target="_blank" rel="noopener">Trendyol'dan Al</a>
                 </div>
             </div>
